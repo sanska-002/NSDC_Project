@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Start {{ exam.title }} · ExamShield{% endblock %}{% block content %}
+<div class="auth-card mx-auto"><span class="eyebrow">EXAM INSTRUCTIONS</span><h2 class="fw-bold mt-2">{{ exam.title }}</h2><p class="text-secondary">{{ exam.description }}</p><div class="row g-3 my-3"><div class="col-6"><div class="stat"><b>{{ exam.duration_minutes }} min</b><span>Time limit</span></div></div><div class="col-6"><div class="stat"><b>{{ exam.questions.count }}</b><span>Questions</span></div></div></div>
+<div class="alert alert-warning"><b>Academic integrity notice</b><br>Leaving the exam tab or minimizing this browser window may automatically submit your answers. Use a stable browser and do not switch tabs. Browser-based detection is not foolproof.</div>
+<form method="post">{% csrf_token %}<button class="btn btn-primary w-100">I understand — start exam</button></form></div>{% endblock %}
